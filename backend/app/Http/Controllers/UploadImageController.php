@@ -12,7 +12,7 @@ class UploadImageController extends Controller
     public function __construct()
     {
         $factory = (new Factory)
-            ->withServiceAccount(base_path('remote-talent-test-firebase-adminsdk-fllr1-55ec854fae.json'));
+            ->withServiceAccount(env('FIREBASE_CREDENTIALS_PATH'));
         $this->storage = $factory->createStorage();
     }
 
