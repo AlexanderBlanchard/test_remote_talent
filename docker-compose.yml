@@ -27,6 +27,8 @@ services:
     container_name: vue_frontend
     ports:
       - "8080:8080"
+    volumes:
+      - ./frontend/src:/app/src
 
   #Servidor web para backend laravel.
   nginx:

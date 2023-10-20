@@ -16,6 +16,7 @@ COPY . /var/www
 RUN composer install
 
 # Copiar y establecer el script de entrada
-COPY permissions.sh /permissions.sh
-RUN chmod +x /permissions.sh
-ENTRYPOINT ["/permissions.sh"]
+# COPY permissions.sh /permissions.sh
+# RUN sudo chmod +x /permissions.sh
+# ENTRYPOINT ["/permissions.sh"]
+CMD [ "php-fpm" ]
