@@ -13,6 +13,9 @@
             </p>
         </div>
     </div>
+    <div class="back-button-container">
+        <router-link to="/" class="btn btn-primary">Regresar al inicio</router-link>
+    </div>
 </template>
 
 <script>
@@ -129,5 +132,10 @@ img {
 
 .card-body .card-title {
     font-weight: bold;
+}
+
+.back-button-container {
+    margin-top: 2em;
+    text-align: center;
 }
 </style>

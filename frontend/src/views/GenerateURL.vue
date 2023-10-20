@@ -11,7 +11,7 @@
                                     <span class="input-group-text"><i class="mdi mdi-account"></i></span>
                                 </div>
                                 <input id="nombre" v-model="nombre" type="text" class="form-control"
-                                    placeholder="Ingresa tu nombre" :disabled="isCompleted">
+                                    placeholder="Ingresa tu nombre" :disabled="isCompleted" maxlength="50">
                                 <div v-if="formErrors.nombre" class="text-danger">{{ formErrors.nombre[0] }}</div>
                             </div>
                             <div class="input-group mb-3">
@@ -19,7 +19,7 @@
                                     <span class="input-group-text"><i class="mdi mdi-account-multiple"></i></span>
                                 </div>
                                 <input id="apellidos" v-model="apellidos" type="text" class="form-control"
-                                    placeholder="Ingresa tus apellidos" :disabled="isCompleted">
+                                    placeholder="Ingresa tus apellidos" :disabled="isCompleted" maxlength="50">
                                 <div v-if="formErrors.apellidos" class="text-danger">{{ formErrors.apellidos[0] }}</div>
                             </div>
                             <div class="input-group mb-3">
@@ -27,7 +27,7 @@
                                     <span class="input-group-text"><i class="mdi mdi-phone"></i></span>
                                 </div>
                                 <input id="telefono" v-model="telefono" type="tel" class="form-control"
-                                    placeholder="Ingresa tu teléfono" :disabled="isCompleted">
+                                    placeholder="Ingresa tu teléfono" :disabled="isCompleted" maxlength="20">
                                 <div v-if="formErrors.telefono" class="text-danger">{{ formErrors.telefono[0] }}</div>
                             </div>
                             <div class="input-group mb-3">
@@ -56,7 +56,7 @@
                             </button>
                         </form>
                         <p v-if="responseSuccess" class="mt-3 text-success text-center">URL generada con éxito: <a
-                                :href="generatedURL">{{ generatedURL }}</a></p>
+                                :href="generatedURL" target="_blank">{{ generatedURL }}</a></p>
                     </div>
                 </div>
             </div>

@@ -11,8 +11,9 @@ class UploadImageController extends Controller
 
     public function __construct()
     {
+        $firebaseCredentialsPath = base_path(config('services.firebase.credentials_path'));
         $factory = (new Factory)
-            ->withServiceAccount(env('FIREBASE_CREDENTIALS_PATH'));
+            ->withServiceAccount($firebaseCredentialsPath);
         $this->storage = $factory->createStorage();
     }
 
@@ -20,7 +21,7 @@ class UploadImageController extends Controller
     {
         // Validación de la imagen
         $request->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:4096',
         ]);
 
         // Obtener la imagen
